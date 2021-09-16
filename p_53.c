@@ -1,0 +1,104 @@
+//From a C-style string
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char line[150];
+    int vowels, consonants, digits, spaces;
+
+    vowels =  consonants = digits = spaces = 0;
+
+    cout << "Enter a line of string: ";
+    cin.getline(line, 150);
+    for(int i = 0; line[i]!='\0'; ++i)
+    {
+        if(line[i]=='a' || line[i]=='e' || line[i]=='i' ||
+           line[i]=='o' || line[i]=='u' || line[i]=='A' ||
+           line[i]=='E' || line[i]=='I' || line[i]=='O' ||
+           line[i]=='U')
+        {
+            ++vowels;
+        }
+        else if((line[i]>='a'&& line[i]<='z') || (line[i]>='A'&& line[i]<='Z'))
+        {
+            ++consonants;
+        }
+        else if(line[i]>='0' && line[i]<='9')
+        {
+            ++digits;
+        }
+        else if (line[i]==' ')
+        {
+            ++spaces;
+        }
+    }
+
+    cout << "Vowels: " << vowels << endl;
+    cout << "Consonants: " << consonants << endl;
+    cout << "Digits: " << digits << endl;
+    cout << "White spaces: " << spaces << endl;
+
+    return 0;
+}
+
+//Enter a line of string: This is 1 hell of a book.
+//Vowels: 7
+//Consonants: 10
+//Digits: 1
+//White spaces: 6
+
+//-----------------------------------------------------------
+
+//From a String Object
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string line;
+    int vowels, consonants, digits, spaces;
+
+    vowels =  consonants = digits = spaces = 0;
+
+    cout << "Enter a line of string: ";
+    getline(cin, line);
+
+    for(int i = 0; i < line.length(); ++i)
+    {
+        if(line[i]=='a' || line[i]=='e' || line[i]=='i' ||
+           line[i]=='o' || line[i]=='u' || line[i]=='A' ||
+           line[i]=='E' || line[i]=='I' || line[i]=='O' ||
+           line[i]=='U')
+        {
+            ++vowels;
+        }
+        else if((line[i]>='a'&& line[i]<='z') || (line[i]>='A'&& line[i]<='Z'))
+        {
+            ++consonants;
+        }
+        else if(line[i]>='0' && line[i]<='9')
+        {
+            ++digits;
+        }
+        else if (line[i]==' ')
+        {
+            ++spaces;
+        }
+    }
+
+    cout << "Vowels: " << vowels << endl;
+    cout << "Consonants: " << consonants << endl;
+    cout << "Digits: " << digits << endl;
+    cout << "White spaces: " << spaces << endl;
+
+    return 0;
+}
+
+//Enter a line of string: I have 2 C++ programming books.
+//Vowels: 8
+//Consonants: 14
+//Digits: 1
+//White spaces: 5
